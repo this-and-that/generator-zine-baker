@@ -1,0 +1,19 @@
+Description:
+	Creates a basic zine template based on the zine This & That (https://github.com/this-and-that/) for use with Baker (https://github.com/simbul/baker). This generator utilizes Twitter Bootstrap for structure and Less. Much of the internal nuts and bolts of this generator were lifted from generator-bootstrap-less (https://github.com/Thomas-Lebeau/generator-bootstrap-less).
+
+Options:
+	Name: The name of your zine
+	Lettering.js: Include Lettering.js
+	Retina.js: Add support for Retina devices
+	Bootstrap.js: Include Bootstrap Javascript files
+
+
+Example:
+	yo zine-baker
+
+	This will create:
+		Gruntfile.js: Configuration for the task runner.
+		bower.json: Front-end packages installed by bower.
+		package.json: Development packages installed by npm.
+
+		app/: Your files 

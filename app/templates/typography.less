@@ -1,0 +1,270 @@
+/**
+ *
+ *	Ken Frederick
+ *	ken.frederick@gmx.de
+ *
+ *	http://kennethfrederick.de/
+ *	http://blog.kennethfrederick.de/
+ *
+ *
+ *	a slightly modified version of 
+ *	Typeplate
+ *	1.0.0
+ *
+ *	Zachary Kain (@zakkain) & Dennis Gaebel (@gryghostvisuals)
+ *
+ *	http://typeplate.com/
+ *	https://github.com/typeplate/typeplate)
+ *
+ *	Creative Commmons License
+ *	http://creativecommons.org/licenses/by/3.0
+ *
+ */
+
+
+//	------------------------------------------------------------------------
+//
+//	Begin Typeplate Definitions
+//
+//	------------------------------------------------------------------------
+
+//
+//	core properties
+//
+@type-base-family: /* NAME OF DEFAULT TYPEFACE */;
+@type-base-family-bold: /* NAME OF DEFAULT BOLD TYPEFACE */;
+@type-base-weight: regular;
+@type-base-size: 13 + 0px; //px
+@type-base-line-height: 15 + 0px; //3px;
+@measure: @type-base-size * @type-base-line-height;
+
+
+//
+//	sizes
+//
+//	all sizes in pixels
+//
+@tera:		297px;
+@giga:		198px;
+@mega:		126px;
+@alpha:		90px;
+@beta:		66px;	//	display
+@gamma:		54px;	//	title
+@delta:		24px;		
+@epsilon:	@type-base-size;	//	body copy
+@zeta:		11px; 	//	caption
+
+
+
+
+
+
+//	------------------------------------------------------------------------
+//
+//	no Need to edit anything below 
+//
+//	------------------------------------------------------------------------
+
+//
+//	indentation
+//
+@indent-val: 0.0em; //1.5em;
+
+
+//
+//	base definition
+//
+.base-type (@base-weight, @base-line-height, @base-size, @base-family) {
+	font-size: @base-size;
+	font-family: @base-family;
+	// font-weight: @base-weight;
+	// line-height: ~"@{base-size}/@{base-line-height}";
+}
+
+
+//
+//	ampersand
+//
+@amp-fontface-name: Ampersand;
+// @amp-fontface-source: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+// @amp-fontface-fallback: local("Georgia");
+
+// Allows for our ampersand element to differ
+// font-family from the ampersand unicode font-family.
+@amp-font-family: @type-base-family;
+
+
+.ampersand (@amp-font-family) {
+	font-family: @amp-font-family;
+}
+
+.ampersand-placeholder {
+	.ampersand(@amp-font-family);
+}
+
+// Call your ampersand on any element you wish from another stylesheet
+// using this Sass extend we've provided...
+// @extend %ampersand-placeholder;
+
+
+//
+//	stats tab
+//
+@stats-font-size: 1.5rem;
+@stats-list-margin: 0 0.625rem 0 0;
+@stats-list-padding: 0 0.625rem 0 0;
+@stats-item-font-size: 0.875rem;
+@stats-item-margin: 0.125rem 0 0 0;
+@stats-border-style: 0.125rem solid @black-dark-gray;
+
+
+/*
+ *	<ul class="stats-tabs">
+ *		<li><a href="#">[value]<b>[name]</b></a></li>
+ *	</ul>
+ */
+.stats-tabs {
+	padding: 0;
+	li {
+		display: inline-block;
+		margin: @stats-list-margin;
+		padding: @stats-list-padding;
+		border-right: @stats-border-style;
+		&:last-child {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+		a {
+			display: inline-block;
+			font-size: @stats-font-size;
+			font-weight: bold;
+			b {
+				display: block;
+				margin: @stats-item-margin;
+				font-size: @stats-item-font-size;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+
+//
+//	hyphenation
+//
+//	http://trentwalton.com/2011/09/07/css-hyphenation
+//
+@hyphen-character:		"\2010"; // –
+@hyphen-limit-after:	3;
+@hyphen-limit-before:	6;
+@hyphen-lines:			3;
+
+.css-hyphens (@val) {
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: @val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
+	-webkit-hyphenate-character: 	@hyphen-character;
+	-webkit-hyphenate-limit-after:	@hyphen-limit-after;
+	-webkit-hyphenate-limit-before:	@hyphen-limit-before;
+	-webkit-hyphenate-lines:		@hyphen-lines;
+
+	-moz-hyphens: @val;		// Firefox 16 thru 20
+	-ms-hyphens: @val;		// IE10
+	hyphens: @val;			// W3C standard
+};
+
+.no-hyphens {
+	.css-hyphens (none);
+}
+
+.no-wrap {
+	.no-hyphens;
+	white-space: nowrap;
+}
+
+//
+//	ellipsis
+//
+.ellipsis {
+	/*width: 200px;*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*text-overflow: clip|ellipsis|string;*/
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+}
+
+
+
+//
+//	smallcaps
+//
+//	http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+//	ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
+//
+.smallcaps (@color, @font-weight) {
+	// depends on the font family.
+	// some font-families don't support small caps
+	// or don't provide them with their web font.
+	font-variant: small-caps;
+	font-weight: @font-weight;
+	text-transform: lowercase;
+	color: @color;
+}
+
+
+//
+//	word wrap
+//
+//	Silent Sass Classes - A.K.A Placeholders
+//
+.inherit-wrap {
+	word-wrap: auto;
+}
+
+//	normal: Indicates that lines may only break at normal word break points.
+.normal-wrap {
+	word-wrap: normal;
+}
+
+//	break-word: Indicates that normally unbreakable words may be broken at
+//	arbitrary points if there are no otherwise acceptable break points in the line.
+.breakword {
+	word-wrap: break-word;
+}
+
+
+//
+//	dropcaps
+//
+//	Use the following Sass @include with any selector you feel necessary.
+//
+//	@include dropcap(@float: left, @type-size: 4em, @type-base-family: inherit, @text-indent: 0, @margin: inherit, @padding: inherit, @color: inherit, @lineHeight: 1, @bg: transparent);
+//
+//	Extend this object into your custom stylesheet.
+//
+//
+// Include your '@include dropcap()' mixin and pass the following
+// arguments below. Feel free to pass in arguments we've provided.
+// At this time you cannot pass in font-family arguments but you're gonna
+// change that anyway so why not just make that separately in your declaration.
+.dropcap (@float: left, @type-size: 4em, @type-base-family: inherit, @text-indent: 0, @margin: inherit, @padding: inherit, @color: inherit, @lineHeight: 1, @bg: transparent) {
+	&:first-letter {
+		float: @float;
+		margin: @margin;
+		padding: @padding;
+		font-size: @type-size;
+		font-family: @type-base-family;
+		line-height: @lineHeight;
+		text-indent: @text-indent;
+		background: @bg;
+		color: @color;
+	}
+}
+
+.drop-cap {
+	.dropcap;
+}
+
+

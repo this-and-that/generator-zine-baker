@@ -1,0 +1,52 @@
+/**
+ *
+ *	Ken Frederick
+ *	ken.frederick@gmx.de
+ *
+ *	http://cargocollective.com/kenfrederick/
+ *	http://blog.kennethfrederick.de/
+ *
+ */
+
+
+//	------------------------------------------------------------------------
+//	Media queries
+//	------------------------------------------------------------------------
+/* 
+ *	Mobile Phones
+ */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+}
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+}
+@media screen and (max-device-width: 640px) {
+}
+
+/* 
+ *	iPhone 4+ Portrait or Landscape
+ */
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* 
+ *	Tablets Portrait or Landscape
+ */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+}
+
+/* 
+ *	Desktop
+ */
+// all devices with screen wider than 1024px
+@media screen and (min-width: 1025px) {
+}
+
+// all devices with screen height 767px and smaller
+@media screen and (max-height: 767px) {
+	img, iframe {
+		&.scale {
+			width: 75%;
+		}
+	}
+}
+

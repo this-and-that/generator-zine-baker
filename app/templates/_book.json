@@ -1,0 +1,21 @@
+{
+	"hpub": 1,
+	"title": "<%= pubName %>",
+	"author": ["Multiple"],
+	"creator": ["<%= pubAuthor %>"],
+	"date": <%= (new Date).toISOString().split('T')[0] %>,
+	"url": "book://",
+
+	"orientation": "both",
+	"zoomable": false,
+
+	"-baker-background": "#000000",
+	"-baker-vertical-bounce": false,
+	"-baker-media-autoplay": true,
+	"-baker-background-image-portrait": "assets/background-portrait.png",
+	"-baker-background-image-landscape": "assets/background-landscape.png",
+	"-baker-page-numbers-color": "#000000",
+
+	"contents": [
+	]
+}

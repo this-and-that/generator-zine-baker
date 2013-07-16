@@ -1,0 +1,15 @@
+{
+	"name": "package",
+	"version": "0.0.0",
+	"dependencies": {
+		"jquery": "~1.9.1",
+		"bootstrap": "~2.3.0",
+		"require-less": "~0.0.6",<% if (jsLettering) { %>
+	    "Lettering.js": "https://github.com/davatron5000/Lettering.js.git#~0.6.1",<% } %><% if (jsRetina) { %>
+		"retina.js-js": "~1.0.2",<% } %><% if (jsPaper) { %>
+		"paper": "~0.9.8",
+	    "frederickkPaper": "https://github.com/frederickk/frederickkPaper.git",<% } %>
+		"modernizr": "~2.6.2"
+	},
+	"devDependencies": {}
+}
