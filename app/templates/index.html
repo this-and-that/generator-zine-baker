@@ -16,12 +16,16 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta name="format-detection" content="telephone=no" />
-
+		<meta name="apple-mobile-web-app-title" content="<%= pubName %>">
 
 
 		<!-- iOS DEVICE ICON -->
-		<link rel="apple-touch-icon-precomposed" href="images/application-icon-72x72.png" />
-		<link rel="apple-touch-icon-precomposed" size="114x114" href="images/application-icon-114x114.png" />
+		<!-- iPhone & iPod Touch -->
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/application-icon-57x57.png" />
+		<!-- iPad -->
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/application-icon-72x72.png" />
+		<!-- Retina (Universal) -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/application-icon-114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/application-icon-144x144.png" />
 
 		<!-- iOS DEVICE STARTUP IMAGES -->
@@ -52,10 +56,6 @@
 
 
 		<!-- JAVASCRIPT -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-
 		<!-- build:js scripts/vendor/jquery.js -->
 		<!-- JQUERY -->
 		<script src="bower_components/jquery/jquery.js"></script>

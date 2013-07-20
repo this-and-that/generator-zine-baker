@@ -6,37 +6,114 @@
  *	http://cargocollective.com/kenfrederick/
  *	http://blog.kennethfrederick.de/
  *
+ *
+ *	mostly borrowed from 
+ *	Dapper 
+ *	0.1.0
+ *
+ *	Flip Steward (@flipstewart)
+ *
+ *	Licensed under The MIT License
+ *	http://opensource.org/licenses/MIT
+ *
  */
 
 
+
 //	------------------------------------------------------------------------
+//
 //	Media queries
+//
 //	------------------------------------------------------------------------
+
+//
+//	iPhones & iPod Touches
+//
 /* 
- *	Mobile Phones
+ *	iPhone & iPod Touch Portrait
  */
-@media screen and (max-device-width: 480px) and (orientation: portrait) {
-}
-@media screen and (max-device-width: 640px) and (orientation: landscape) {
-}
-@media screen and (max-device-width: 640px) {
+@media screen and (width: 320px), (height: 480px) {
+	body {
+		background-color: #fff;
+	}
 }
 
 /* 
- *	iPhone 4+ Portrait or Landscape
+ *	iPhone & iPod Touch Landscape
+ */
+@media screen and (width: 480px), (height: 320px) {
+	body {
+		background-color: #000;
+		color: #ddd;
+	}
+}
+
+
+
+/* 
+ *	iPhone 4 Portrait
+ */
+@media screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* 
+ *	iPhone 4 Landscape
  */
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
 }
 
+
+
 /* 
- *	Tablets Portrait or Landscape
+ *	iPhone 5 & 5th Generation iPod Touch Portrait
  */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (width: 320px), (height: 568px) {
+	body {
+		background-color: #fff;
+	}
 }
 
 /* 
- *	Desktop
+ *	iPhone 5 & 5th Generation iPod Touch Landscape
  */
+@media screen and (width: 658px), (height: 320px) {
+	body {
+		background-color: #000;
+		color: #ddd;
+	}
+}
+
+
+
+//
+//	iPads
+//
+
+/*
+ *	iPad Portrait
+ */
+@media screen and (width: 768px), (height: 1024px) {
+	body {
+		background-color: #fff;
+	}
+}
+
+/*
+ *	iPad Landscape
+ */
+@media screen and (width: 1024px), (height: 768px) {
+	body {
+		background-color: #000;
+		color: #ddd;
+	}
+}
+
+
+
+//
+//	Desktops
+//
+
 // all devices with screen wider than 1024px
 @media screen and (min-width: 1025px) {
 }
@@ -49,4 +126,3 @@
 		}
 	}
 }
-
